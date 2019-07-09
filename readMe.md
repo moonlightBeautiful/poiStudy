@@ -1,6 +1,10 @@
 poi的学习
-    1.简介：
+    简介：
         对微软office文档进行读写的组件
-    2.hello 
-        创建workbook工作簿，创建sheet页，创建cell。
-    3.
+1.hello 
+    创建workbook工作簿，创建sheet页，创建cell。
+2.单元格操作
+    1.单元格内容各种类型
+    2.遍历单元格，提取内容
+    3.直接把sheet的内容变成文本内容提取出来
+3.
