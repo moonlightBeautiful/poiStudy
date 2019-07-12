@@ -7,7 +7,7 @@ import org.apache.poi.ss.usermodel.*;
 import java.io.FileOutputStream;
 
 /**
- * 单元格位置格式，但是以前的方法都废弃了
+ * 单元格位置格式，位置
  */
 public class Demo01 {
 

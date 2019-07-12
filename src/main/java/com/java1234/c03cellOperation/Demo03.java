@@ -1,49 +1,46 @@
-/*
 package com.java1234.c03cellOperation;
 
-import java.io.FileOutputStream;
-import java.util.Calendar;
-import java.util.Date;
-
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.CellStyle;
-import org.apache.poi.ss.usermodel.CreationHelper;
-import org.apache.poi.ss.usermodel.IndexedColors;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.*;
 
-*/
+import java.io.FileOutputStream;
+
 /**
  * 设置单元格背景色和前景色
- *//*
-
+ */
 public class Demo03 {
 
-	public static void main(String[] args) throws Exception{
-		Workbook wb=new HSSFWorkbook(); // ����һ���µĹ�����
-		Sheet sheet=wb.createSheet("��һ��Sheetҳ");  // ������һ��Sheetҳ
-		Row row=sheet.createRow(1); // ����һ����
-		
-		Cell cell=row.createCell(1);
-		cell.setCellValue("XX");
-		CellStyle cellStyle=wb.createCellStyle();
-		cellStyle.setFillBackgroundColor(IndexedColors.AQUA.getIndex()); // ����ɫ
-		cellStyle.setFillPattern(CellStyle.BIG_SPOTS);  
-		cell.setCellStyle(cellStyle);
-		
-		
-		Cell cell2=row.createCell(2);
-		cell2.setCellValue("YYY");
-		CellStyle cellStyle2=wb.createCellStyle();
-		cellStyle2.setFillForegroundColor(IndexedColors.RED.getIndex()); // ǰ��ɫ
-		cellStyle2.setFillPattern(CellStyle.SOLID_FOREGROUND);  
-		cell2.setCellStyle(cellStyle2);
-		
-		FileOutputStream fileOut=new FileOutputStream("c:\\������.xls");
-		wb.write(fileOut);
-		fileOut.close();
-	}
+    public static void main(String[] args) throws Exception {
+        // 创建一个新的工作簿
+        Workbook wb = new HSSFWorkbook();
+        // 创建Sheet页，第1页
+        Sheet sheet = wb.createSheet("第一个Sheet页");
+        // 创建一个行，第3行
+        Row row3 = sheet.createRow(2);
+        // 设置行高30
+        row3.setHeightInPoints(30);
+
+        // 创建一个单元格 第3行第2列，关于颜色的操作
+        Cell cell32 = row3.createCell(1);
+        cell32.setCellValue("XXX");
+        // 创建一个单元格样式
+        CellStyle cellStyle1 = wb.createCellStyle();
+        //背景
+        cellStyle1.setFillBackgroundColor(IndexedColors.GREEN.getIndex());
+        cellStyle1.setFillPattern(FillPatternType.BIG_SPOTS);
+        cell32.setCellStyle(cellStyle1);
+
+        // 创建一个单元格 第3行第4列，关于颜色的操作
+        Cell cell34 = row3.createCell(3);
+        cell34.setCellValue("YYY");
+        CellStyle cellStyle2 = wb.createCellStyle();
+        //前景
+        cellStyle2.setFillForegroundColor(IndexedColors.RED.getIndex());
+        cellStyle2.setFillPattern(FillPatternType.BIG_SPOTS);
+        cell34.setCellStyle(cellStyle2);
+
+        FileOutputStream fileOut = new FileOutputStream("c:\\测试工作簿.xls");
+        wb.write(fileOut);
+        fileOut.close();
+    }
 }
-*/
