@@ -1,3 +1,4 @@
+/*
 package com.java1234.c03cellOperation;
 
 import java.io.FileOutputStream;
@@ -13,9 +14,11 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 
+*/
 /**
  * 设置单元格背景色和前景色
- */
+ *//*
+
 public class Demo03 {
 
 	public static void main(String[] args) throws Exception{
@@ -43,3 +46,4 @@ public class Demo03 {
 		fileOut.close();
 	}
 }
+*/
