@@ -23,11 +23,13 @@ public class Demo02 {
         // 获取第一行
         Row row = sheet.getRow(0);
         // 获取第一个单元格
-
+        if (row == null) {
+            row = sheet.createRow(0);
+        }
         Cell cell = row.getCell(0, Row.MissingCellPolicy.RETURN_BLANK_AS_NULL);
         //单元格没有值时，getCell方法获取不到单元格，可能需要指定MissingCellPolicy,但是指定了也没用
         if (cell == null) {
-            cell = row.createCell(3);
+            cell = row.createCell(0);
         }
         cell.setCellType(Cell.CELL_TYPE_STRING);
         cell.setCellValue("测试单元格");
