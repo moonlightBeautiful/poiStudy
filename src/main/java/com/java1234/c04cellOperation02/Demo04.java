@@ -14,23 +14,20 @@ public class Demo04 {
         DataFormat format = wb.createDataFormat();
         Row row;
         Cell cell;
-        short rowNum = 0;
-        short colNum = 0;
 
-        row = sheet.createRow(rowNum++);
-        cell = row.createCell(colNum);
+        row = sheet.createRow(0);
+        cell = row.createCell(0);
         cell.setCellValue(111111.25);
-
         style = wb.createCellStyle();
         style.setDataFormat(format.getFormat("0.0")); // 设置数据格式
         cell.setCellStyle(style);
 
-        row = sheet.createRow(rowNum++);
-        cell = row.createCell(colNum);
+        row = sheet.createRow(1);
+        cell = row.createCell('B'); //只能是数字，不能是字母
         cell.setCellValue(1111111.25);
-        style = wb.createCellStyle();
-        style.setDataFormat(format.getFormat("#,##0.000"));
-        cell.setCellStyle(style);
+       /* style = wb.createCellStyle();
+        style.setDataFormat(format.getFormat("0.0"));
+        cell.setCellStyle(style);*/
 
         FileOutputStream fileOut = new FileOutputStream("c:\\工作簿.xls");
         wb.write(fileOut);
